@@ -28,7 +28,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<td><input class="text" type="text" id="userName" name="hu_user_name" onfocus="FocusItem(this)" onblur="CheckItem(this);" /><span></span></td>
 					</tr>
 					<tr>
-						<td class="field1">登录密码：</td>
+						<td class="field1">登录</td>
 						<td><input class="text1" type="password" id="passWord" name="hu_password" onfocus="FocusItem(this)" onblur="CheckItem(this);" /><a href="retrieve_password.jsp">忘记密码</a></td>
 		
 					</tr>
