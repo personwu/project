@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.oracle.dao.BuyDao">
+
+      <select id="queryUserByUsernameAndPassword" resultType="map" parameterType="map">
+
+          select * from hwua_user where hu_user_name=#{hu_user_name} and hu_password=#{hu_password}
+
+      </select>
+
+    <insert id="addUser" parameterType="map">
+
+        insert into hwua_user (hu_user_name,hu_password,hu_sex,hu_birthday,hu_identity_code,
+         hu_email,hu_mobile,hu_address,hu_status) VALUES (#{hu_user_name},
+         #{hu_password},#{hu_sex},#{hu_birthday},
+         #{hu_identity_code},#{hu_email},#{hu_mobile},#{hu_address},#{hu_status})
+    </insert>
+
+    <update id="updateMima" parameterType="map">
+
+        update hwua_user set hu_password=#{hu_password} where hu_user_name=#{hu_user_name} and hu_email=#{hu_email}
+    </update>
+    
+</mapper>
