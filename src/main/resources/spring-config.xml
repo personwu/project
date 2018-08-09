@@ -37,8 +37,8 @@
         <property name="mapperLocations" value="classpath:mappers/*.xml"/>
     </bean>
     <!--配置mapper与dao的映射,让spring自动生产dao的实现类的bean-->
-    <bean id="mapperScannerConfigurer" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+    <!--<bean id="mapperScannerConfigurer" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
         <property name="sqlSessionFactoryBeanName" value="sessionFactory"/>
         <property name="basePackage" value="com.oracle.**.dao"/>
-    </bean>
+    </bean>-->
 </beans>
