@@ -17,7 +17,7 @@
     <!--使用注解的方式来支持事务-->
     <tx:annotation-driven transaction-manager="transactionManager"/>
     <!--SwaggerConfig的配置信息-->
-    <!--<bean class="com.mangofactory.swagger.configuration.SpringSwaggerConfig"/>-->
+    <bean class="com.mangofactory.swagger.configuration.SpringSwaggerConfig"/>
 
     <!--配置数据源-->
     <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
