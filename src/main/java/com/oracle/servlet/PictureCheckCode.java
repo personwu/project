@@ -1,11 +1,14 @@
 package com.oracle.servlet;
 
 
+import javax.imageio.ImageIO;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.awt.*;
+import java.awt.geom.AffineTransform;
 import java.awt.geom.Line2D;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
@@ -120,11 +123,32 @@ public class PictureCheckCode extends HttpServlet {
                     String str_34 = str_r3 + str_r4;
                     int tempHign = Integer.parseInt(str_34,16);
                     bytes[1] = (byte)tempHign;
+                    ctmp = new String(bytes);
+                    break;
+                    default:
+                        itmp = random.nextInt(10) + 48;
+                        ctmp = String.valueOf((char)itmp);
+                        break;
             }
-
-
-
+            sRand += ctmp;
+            Color color = new Color(20 + random.nextInt(110),20 + random.nextInt(110),random.nextInt(110));
+            g.setColor(color);
+            //将生成的随机数进行随机缩放并旋转制定角度 PS,建议不要对文字进行缩放与旋转，因为这样图片可能不正常显示
+            /*将文字旋转制定角度*/
+            Graphics2D g2d_word = (Graphics2D)g;
+            AffineTransform trans = new AffineTransform();
+            trans.rotate((45)*3.14/180,15*i+8,7);
+            /*缩放文字*/
+            float scaleSize = random.nextFloat()+0.8f;
+            if(scaleSize > 1f) scaleSize = 1f;
+            trans.scale(scaleSize,scaleSize);
+            g2d_word.setTransform(trans);
+            g.drawString(ctmp,15*i+18,14);
         }
+        HttpSession session = request.getSession(true);
+        session.setAttribute("randCheckCode",sRand);
+        g.dispose();  //释放g所占用的系统资源
+        ImageIO.write(image,"JPEG",response.getOutputStream());//输出图片
     }
 
 
