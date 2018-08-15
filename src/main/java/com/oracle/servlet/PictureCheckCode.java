@@ -118,6 +118,8 @@ public class PictureCheckCode extends HttpServlet {
                     bytes[0] = (byte) templow;
                     //将生成的位码保存到字节数组的第二个元素中
                     String str_34 = str_r3 + str_r4;
+                    int tempHign = Integer.parseInt(str_34,16);
+                    bytes[1] = (byte)tempHign;
             }
 
 
