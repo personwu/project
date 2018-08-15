@@ -29,7 +29,7 @@ public class VerifyCodeServlet extends HttpServlet {
 
     //验证码字符个数
 
-    private int codeCount=4;
+    private int codeCount = 4;
     private int x = 0;
     //字体高度
 
@@ -120,7 +120,7 @@ public class VerifyCodeServlet extends HttpServlet {
             randomCode.append(strRand);
         }
         //将四位数字的验证码保存到session中
-        HttpSession session=req.getSession();
+        HttpSession session = req.getSession();
         session.setAttribute("validateCode",randomCode.toString());
         //禁止图像缓存
         resp.setHeader("Pragma","no-cache");
@@ -128,7 +128,7 @@ public class VerifyCodeServlet extends HttpServlet {
         resp.setDateHeader("Expires",0);
         resp.setContentType("image/jpeg");
         //将图像输出到Servlet的输出流中
-        ServletOutputStream sos=resp.getOutputStream();
+        ServletOutputStream sos = resp.getOutputStream();
         ImageIO.write(buffImg,"jpeg",sos);
         sos.close();
 
