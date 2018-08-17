@@ -1,7 +1,11 @@
-package com.oracle.common;
+package com.oracle.test;
+
+import org.junit.Test;
 
 public class GetBeforeMoney {
 
+
+     @Test
     public void test1(){
 
         double money = 19385;//税后工资

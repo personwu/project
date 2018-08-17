@@ -1,11 +1,13 @@
-package com.oracle.common;
+package com.oracle.test;
 
 
+import org.junit.Test;
 
 public class GetMoney {
 
 
 
+     @Test
      public void test() {
          double money = 30000;//税前工资
          double society = getOther(money,money);//应扣社保
