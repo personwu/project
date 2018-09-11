@@ -1,8 +1,5 @@
 package com.oracle.util;
-
-
 import net.sf.json.JSONObject;
-
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -18,19 +15,19 @@ public class GetMessage {
     /**
      * 用户Id
      * */
-    public static final String ACCOUNT_SID = "7e04461fad07********7e478e3eec663";//这里填写在平台里边获取到的
+    public static final String ACCOUNT_SID = "438158126b4b433b9ed5e9fc1390a511";//这里填写在平台里边获取到的
 
 
     /**
     *密钥
     * */
-    public static final String AUTH_TOKEN = "10aa253a6ece4********ae987032b66";
+    public static final String AUTH_TOKEN = "f83d6d3*******3df";
 
     /**
      * 请求地址前半部分
      * */
 
-    public static final String BASE_URL = "https://api.miaodiyun.com/20150822/industrySMS/sendSMS";//这里是固定的不用改
+    public static final String BASE_URL = "https://api.miaodiyun.com";//这里是固定的不用改
 
     public static String randNum = RandUtil.getRandNum();
 
